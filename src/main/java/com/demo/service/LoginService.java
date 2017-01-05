@@ -1,5 +1,9 @@
 package com.demo.service;
 
+import java.util.List;
+
+import com.demo.bean.User;
+
 /** 
 * @ClassName: LoginService 
 * @Description: TODO
@@ -10,4 +14,6 @@ package com.demo.service;
 public interface LoginService {
 
 	boolean login(String userName, String passWord);
+	
+	List<User> selectList();
 }

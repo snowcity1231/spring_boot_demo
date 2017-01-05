@@ -1,5 +1,7 @@
 package com.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,12 +27,19 @@ public class LoginServiceImpl implements LoginService {
 	@Override
 	public boolean login(String userName, String passWord) {
 		User user = userDao.selectByUserName(userName);
-		System.out.println(user.getPassword());
-		if(userName != null && userName.equals("admin")) {
+		if(user != null) {
 			return true;
 		}else {
 			return false;
 		}
+	}
+
+	/* (non-Javadoc)
+	 * @see com.demo.service.LoginService#selectList()
+	 */
+	@Override
+	public List<User> selectList() {
+		return userDao.selectAll();
 	}
 
 }

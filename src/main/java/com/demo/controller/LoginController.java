@@ -20,13 +20,18 @@ public class LoginController {
 	
 	@Autowired
 	LoginService loginService;
-
-	@RequestMapping("login")
-	public String login(String userName, String passWord) {
-		if(loginService.login(userName, passWord)) {
-			return "folder/main";
-		}else {
-			return "error";
-		}
+	
+	@RequestMapping("/login")
+	public String toLogin() {
+		return "login";
 	}
+
+//	@RequestMapping(value = "login")
+//	public String login(String userName, String passWord) {
+//		if(loginService.login(userName, passWord)) {
+//			return "folder/main";
+//		}else {
+//			return "failed";
+//		}
+//	}
 }

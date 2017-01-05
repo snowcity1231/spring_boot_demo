@@ -13,8 +13,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 	
+	/**
+	 * 映射到index.html
+	 * @return
+	 */
 	@RequestMapping("/")
 	public String index() {
 	    return "index";
+	}
+	
+	/**
+	 * 映射到hello.html
+	 * @return
+	 */
+	@RequestMapping("/hello")
+	public String hello() {
+		return "hello";
 	}
 }
